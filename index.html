@@ -77,12 +77,35 @@
             color: #e74c3c;
         }
     </style>
+    <script>
+        // Dezactivează combinarea de taste Ctrl + S pentru a împiedica salvarea paginii
+        document.addEventListener("keydown", function(e) {
+            if (e.ctrlKey && e.key === 's') {
+                e.preventDefault();
+                alert("Saving this page is disabled.");
+            }
+        });
+
+        // Dezactivează combinarea de taste F12 pentru a preveni deschiderea instrumentelor de dezvoltare
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+                event.preventDefault();
+                alert("Developer tools are disabled.");
+            }
+        });
+
+        // Dezactivează clicul dreapta pe pagină
+        document.addEventListener("contextmenu", function(e) {
+            e.preventDefault();
+            alert("Right-click has been disabled.");
+        });
+    </script>
 </head>
 <body>
     <div class="container">
         <h1>Access Denied</h1>
         <h2>DeadGATE Detected ee.botnetsentry00 javascript.botnet.signal</h2>
-        <p>Our Dead recovery in TERRA detected unsual botsentry activity on this site. Please stop because your botnet will be flooded with FFIRE BBOMB.</p>
+        <p>Our Dead recovery in TERRA detected unusual botsentry activity on this site. Please stop because your botnet will be flooded with FFIRE BBOMB.</p>
         <a href="/" class="button">Return Home</a>
         <div class="footer">
             <p>For more information, please contact <a href="mailto:dect@deadgate.cc">dect@deadgate.cc</a>.</p>
